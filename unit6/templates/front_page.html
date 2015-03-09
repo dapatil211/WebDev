@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>My Blog</h1>
+<hr>
+{% for post in posts %}
+  <div class="post">
+    <div class="subject">
+      <h2>{{post.subject}}</h2>
+    </div>
+    <div class="content">
+      {{post.content}}
+    </div>
+  </div>
+  <hr>
+{% endfor %}
+<form method="get">
+  <input type="submit" name="newPost" value="New Post">
+</form>
+
+<div class="update_time">
+  {{time}}
+</div>
+
+{% endblock %}
